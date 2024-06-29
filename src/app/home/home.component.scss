@@ -1,0 +1,39 @@
+.main{
+    height: 100vh;
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;
+}
+form{
+    width: 30%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.125);
+}
+
+.container_{
+margin: 0 15px;
+}
+
+a{
+    margin: 10px;
+}
+
+h2,p{
+    margin: 0 10px;
+}
+span{
+    margin: 0 10px;
+    color:#6c757d
+}
+
+.card-container {
+    margin-bottom: 15px !important;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
