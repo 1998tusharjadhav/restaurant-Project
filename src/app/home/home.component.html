@@ -1,53 +1,39 @@
-<div class="main">
-    <div style="display: flex;justify-content: center;">
-        <button style="margin: 20px;" type="button" class="btn btn-danger" (click)="toggleForm()">
-            {{ show ? 'Hide Form' : 'Add new Restaurant' }}
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Restaurant List</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
     </div>
-    <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()" class="form" *ngIf="show" #scrollTarget>
-        <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input type="text" id="name" formControlName="name" class="form-control">
-        </div>
+  </div>
+</nav>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" id="email" formControlName="email" class="form-control">
-        </div>
+<router-outlet></router-outlet>
 
-        <div class="mb-3">
-            <label for="place" class="form-label">Place:</label>
-            <input type="text" id="place" formControlName="place" class="form-control">
-        </div>
-
-        <div class="mb-3">
-            <label for="info" class="form-label">Information:</label>
-            <input type="text" id="info" formControlName="info" class="form-control">
-        </div>
-
-        <!-- Example of Bootstrap file input -->
-        <!-- <div class="mb-3">
-            <label for="image" class="form-label">Upload Image:</label>
-            <input type="file" id="image" formControlName="image" class="form-control">
-        </div> -->
-
-        <button type="submit" class="btn btn-warning" *ngIf="isNewRestaurant">Add New Restaurant</button>
-        <button type="submit" class="btn btn-warning" *ngIf="!isNewRestaurant">Update Restaurant</button>
-    </form>
-
-
-
-
-    <div class="row container_">
-        <div class="col-sm-2 mb-3 mb-sm-0 card-container" *ngFor="let res of restaurant; let i = index">
-            <div class="card" style="width: 18rem;background: beige;">
-                <img style="height: 250px;" src="{{res.image}}" class="card-img-top" alt="...">
-                <h2 class="card-title">{{ res.name }}</h2>
-                <span class="card-text">{{ res.place }}</span>
-                <p class="card-text">{{ res.info }}</p>
-                <a (click)="delete(i)" class="btn btn-info">Delete</a>
-                <a (click)="onClickRestaurant(res , i)" class="btn btn-info">Edit</a>
-            </div>
-        </div>
-    </div>
-</div>
