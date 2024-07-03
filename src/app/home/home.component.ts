@@ -168,8 +168,10 @@ export class HomeComponent {
 
   delete(i: number) {
     this.restaurant.splice(i, 1);
+    this.isNewRestaurant = true;
+    this.restaurantForm.reset();
   }
-  
+
 
   // restaurantview(res: any) {
   //   this.get.setData(res);
